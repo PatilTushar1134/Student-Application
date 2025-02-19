@@ -1,0 +1,30 @@
+﻿@model Student__System_With_Code_First.Models.Student_Model
+
+
+<h2 class="text-white bg-black text-center">Student Information</h2>
+
+@using (Html.BeginForm("SaveData", "Student", FormMethod.Post))
+{
+
+    <div class="row">
+        <div class="col-md-3">
+            @Html.HiddenFor(m => m.stud_id)
+            <label>Student Name</label>
+            @Html.TextBoxFor(m => m.stud_name, new { @class = "form-control" })
+        </div>
+        <div class="col-md-3">
+            <label>Student Emial</label>
+            @Html.TextBoxFor(m => m.stud_email, new { @class = "form-control" })
+        </div>
+        <div class="col-md-3">
+            <label>Student Contact</label>
+            @Html.TextBoxFor(m => m.stud_phone, new { @class = "form-control" })
+        </div>
+        <div class="col-md-3">
+            <label>Student Address</label>
+            @Html.TextBoxFor(m => m.stud_address, new { @class = "form-control" })
+        </div>
+    </div>
+    <button type="submit" class="btn btn-dark mt-2">Save</button>
+    <a asp-action="Report">View Report</a>
+}

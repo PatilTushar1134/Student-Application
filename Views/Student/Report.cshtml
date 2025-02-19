@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Student__System_With_Code_First.Models.Student_Model>
+
+<p>
+    <a asp-action="Index">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.stud_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stud_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stud_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stud_phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stud_address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.stud_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stud_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stud_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stud_phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stud_address)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.stud_id }) |
+                
+                @Html.ActionLink("Delete", "Delete", new { id = item.stud_id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
